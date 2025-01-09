@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
-    public class StaffAccounts
+    public class Customers
     {
         public Guid Id { get; set; }
         [MaxLength(100)]
@@ -19,11 +19,11 @@ namespace Domain.Entities
         [MaxLength(50)]
         public string? Password { get; set; }
         [MaxLength(255)]
-        public string? Profile_img { get; set; }    
-        public bool? Is_active { get; set; }
+        public string? Profile_img { get; set; }
+        public bool? Is_locked { get; set; } = true;
         public DateTime Created_at { get; set; } = default;
         public DateTime? Updated_at { get; set; }
         public bool? Is_deleted { get; set; } = false;
-        public ICollection<Slideshows>? Slideshows { get; set; }
+        public CustomerAddresses Customer_addresses { get; set; }
     }
 }
