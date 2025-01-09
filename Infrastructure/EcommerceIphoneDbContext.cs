@@ -1,12 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Domain.Entities;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace Infrastructure
 {
-    internal class EcommerceIphoneDbContext
+    public class EcommerceIphoneDbContext:DbContext
     {
+        public DbSet<Slideshows> Slideshows { get; set; }
+        public DbSet<StaffAccounts> StaffAccounts { get; set; }
+
+        public EcommerceIphoneDbContext(DbContextOptions options):base(options)
+        {
+
+        }
     }
 }
